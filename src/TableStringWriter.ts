@@ -6,6 +6,10 @@ export default class TableStringWriter {
         this.colPadding = 1;
     }
 
+    writeSymmetric(headings: number[], data: number[][]) : string {
+        return this.write(headings, headings, data);
+    }
+
     write(rowHeadings: number[], colHeadings: number[], data: number[][]) : string {
 
         if (rowHeadings !== colHeadings) {
