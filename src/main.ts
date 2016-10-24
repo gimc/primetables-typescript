@@ -1,4 +1,5 @@
 import PrimeGenerator from './PrimeGenerator';
+import IncrementalPrimeGenerator from './IncrementalPrimeGenerator';
 import MultiplicationTable from './MultiplicationTable';
 import TableStringWriter from './TableStringWriter';
 
@@ -9,7 +10,8 @@ if (range < 1) {
     process.exit(0);
 }
 
-let generator = new PrimeGenerator(Math.pow(range, 2));
+//let generator = new PrimeGenerator(Math.pow(range, 2));
+let generator = new IncrementalPrimeGenerator();
 let primes = generator.take(range);
 
 let multiplicationTable = new MultiplicationTable();
