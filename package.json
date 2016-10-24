@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "pretest": "tsc",
-    "test": "jasmine JASMINE_CONFIG_PATH=spec/support/jasmine.json"
+    "test": "jasmine JASMINE_CONFIG_PATH=spec/support/jasmine.json",
+    "start": "tsc && node ./src/main.js"
   },
   "repository": {
     "type": "git",
