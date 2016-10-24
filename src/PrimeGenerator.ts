@@ -36,4 +36,14 @@ export default class PrimeGenerator {
         return this.primes[this.index-1];
     }
 
+    take(amountToTake: number) : number[] {
+        let values: number[] = [];
+        
+        for (let i = 0; i < amountToTake; i++) {
+            values.push(this.next());
+        }
+
+        return values;
+    }
+
 }

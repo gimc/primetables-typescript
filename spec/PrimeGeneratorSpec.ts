@@ -18,4 +18,14 @@ describe("Prime Generator tests", function () {
         expect(primeList).toEqual([2,3]);
     });
 
+    it("Tests multiple 'take's", function () {
+
+        let generator = new PrimeGenerator(100);
+        let primes = generator.take(3);
+        expect(primes).toEqual([2, 3, 5]);
+
+        let nextPrimes = generator.take(3);
+        expect(nextPrimes).toEqual([7, 11, 13]); 
+    });
+
 });
