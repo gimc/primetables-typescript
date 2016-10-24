@@ -45,7 +45,7 @@ ${divider}`;
             colHeaderStrings[index+1] = this.padLeft(value.toString(10), maxCellWidth, " ");
         });
 
-        return colHeaderStrings.join("|") + "|";
+        return "|" + colHeaderStrings.join("|") + "|";
     }
 
     private writeDataRows(rowHeadings: number[], data: number[][], maxRowHeaderWidth: number, maxCellWidth: number): string {
@@ -64,7 +64,7 @@ ${divider}`;
                 rowCells[col+1] = this.padLeft(dataRow[col].toString(10), maxCellWidth, " ");
             }
 
-            output.push(rowCells.join("|") + "|");
+            output.push("|" + rowCells.join("|") + "|");
         }
         
         return output.join('\n');

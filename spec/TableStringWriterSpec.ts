@@ -11,13 +11,13 @@ describe("Tests for formatting table data as a string.", function () {
         let output = writer.write(rowHeadings, colHeadings, data);
 
         let expected = `
-===============
- x|  2|  3|  5|
-===============
- 2|  4|  6| 10|
- 3|  6|  9| 15|
- 5| 10| 15| 25|
-===============`;
+================
+| x|  2|  3|  5|
+================
+| 2|  4|  6| 10|
+| 3|  6|  9| 15|
+| 5| 10| 15| 25|
+================`;
 
         expect(output).toEqual(expected);
 
@@ -31,13 +31,13 @@ describe("Tests for formatting table data as a string.", function () {
         let output = writer.writeSymmetric(headings, data);
 
         let expected = `
-===============
- x|  2|  3|  5|
-===============
- 2|  4|  6| 10|
- 3|  6|  9| 15|
- 5| 10| 15| 25|
-===============`;
+================
+| x|  2|  3|  5|
+================
+| 2|  4|  6| 10|
+| 3|  6|  9| 15|
+| 5| 10| 15| 25|
+================`;
 
         expect(output).toEqual(expected);
 
