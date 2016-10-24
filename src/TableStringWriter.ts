@@ -25,23 +25,33 @@ export default class TableStringWriter {
         let maxCellWidth = data[rowHeadings.length - 1][colHeadings.length-1].toString(10).length;
         maxCellWidth += this.colPadding;
 
-        // write out the column headers
+        let colHeaderString = this.writeColumnHeaders(colHeadings, maxRowHeaderWidth, maxCellWidth);
+        let tableWidth = colHeaderString.length;
+        let divider = this.repeat("=", tableWidth);
+
+        return `
+${divider}
+${colHeaderString}
+${divider}
+${this.writeDataRows(rowHeadings, data, maxRowHeaderWidth, maxCellWidth)}
+${divider}`;
+
+    }
+
+    private writeColumnHeaders(colHeadings: number[], maxRowHeaderWidth: number, maxCellWidth: number): string {
         let colHeaderStrings: string[] = [];
         colHeaderStrings[0] = this.padLeft("x", maxRowHeaderWidth, " ");
         colHeadings.forEach((value, index) => {
             colHeaderStrings[index+1] = this.padLeft(value.toString(10), maxCellWidth, " ");
         });
 
-        let colHeaderString = colHeaderStrings.join("|") + "|";
-        let tableWidth = colHeaderString.length;
-        let divider = this.repeat("=", tableWidth); 
-        let output = `
-${divider}
-${colHeaderString}
-${divider}
-`;
+        return colHeaderStrings.join("|") + "|";
+    }
 
-        // Now the data rows
+    private writeDataRows(rowHeadings: number[], data: number[][], maxRowHeaderWidth: number, maxCellWidth: number): string {
+
+        let output: string[] = [];
+        
         for (let row = 0; row < rowHeadings.length; row++) {
             var dataRow = data[row];
             var rowCells: string[] = [];
@@ -54,12 +64,10 @@ ${divider}
                 rowCells[col+1] = this.padLeft(dataRow[col].toString(10), maxCellWidth, " ");
             }
 
-            output += rowCells.join("|") + "|\n";
+            output.push(rowCells.join("|") + "|");
         }
-
-        output += divider; 
-
-        return output;
+        
+        return output.join('\n');
     }
 
     // todo: should be using underscore.string or similar for this, not re-inventing wheels
