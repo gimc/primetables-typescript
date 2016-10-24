@@ -1,0 +1,1 @@
+# primetables-typescript
