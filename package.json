@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/gimc/primetables-typescript#readme",
   "devDependencies": {
-    "jasmine": "^2.5.2"
+    "jasmine": "^2.5.2",
+    "typescript": "^2.0.3"
   }
 }
