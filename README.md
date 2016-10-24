@@ -35,10 +35,10 @@ both from the root primetables-typescript directory.
 
 2. Prime generation algorithms: sieve of Eratosthenes for bounded prime calculation and an incremental version to support a 'give me n primes' query more efficiently.
 
-3. Typescript/node implementation. I'm not familiar with Typescript (but always liked the sound of it) and the node toolchain, but used this as an opportunity to learn more. It's been a little while since I've been fully immersed in Javascript so I figured Typescript would be safer coming from C#.
+3. Typescript/node implementation. I'm not familiar with Typescript (but always liked the sound of it) and I've not used the node toolchain for a while, so used this as an opportunity to learn more. It's been a while since I've been fully immersed in Javascript so I figured Typescript would be safer given my recent C# experience.
 
 ## If I had more time...
-1. Improve performance of prime generation algorithms. In particular, the incremental version may benefit from sorting the accumulated composite values in ascending order (to minimise the per-candidate search of the composite array).
+1. Improve performance of the prime generation algorithms. In particular, the incremental version may benefit from sorting the accumulated composite values in ascending order (to minimise the per-candidate search of the composite array).
 
 2. Investigate other prime generation algorithms. I have a partially-complete segmented sieve but am out of time. Could also investigate wheel factorisation.
 
