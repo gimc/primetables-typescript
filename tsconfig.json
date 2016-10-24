@@ -13,6 +13,7 @@
         "node_modules"
     ],
     "files": [
-        "typings/globals/jasmine/index.d.ts"
+        "typings/globals/jasmine/index.d.ts",
+        "node_modules/@types/node/index.d.ts"
     ]
 }
