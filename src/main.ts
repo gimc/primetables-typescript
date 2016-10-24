@@ -2,15 +2,15 @@ import PrimeGenerator from './PrimeGenerator';
 import MultiplicationTable from './MultiplicationTable';
 import TableStringWriter from './TableStringWriter';
 
-console.info(process.argv[2]);
-
 let range = +process.argv[2];
 
-let generator = new PrimeGenerator(Math.pow(range, 2));
-let primes = [];
-for (let i = 0; i < range; i++) {
-    primes.push(generator.next());
+if (range < 1) {
+    console.log("Number of primes must be at least 1");
+    process.exit(0);
 }
+
+let generator = new PrimeGenerator(Math.pow(range, 2));
+let primes = generator.take(range);
 
 let multiplicationTable = new MultiplicationTable();
 let tableData = multiplicationTable.calculateSymmetric(primes);
@@ -18,4 +18,5 @@ let tableData = multiplicationTable.calculateSymmetric(primes);
 let writer = new TableStringWriter();
 let output = writer.writeSymmetric(primes, tableData);
 
+console.info("Prime Table with " + process.argv[2] + " primes");
 console.log(output);
