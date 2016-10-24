@@ -15,13 +15,18 @@ export default class PrimeGenerator {
         this.upperPrimeBound = upperPrimeBound;
     }
 
+    /**
+     * Returns null if there are no more primes in the list
+     */
     next() : number {
 
+        // Initialise the list
         if (this.index == 0) {
             var sieve = new PrimeSieve();
             this.primes = sieve.calculatePrimes(this.upperPrimeBound);
         }
 
+        // Have reached the end of our prime list
         if (this.index >= this.primes.length) {
             return null;
         }
