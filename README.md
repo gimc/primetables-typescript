@@ -47,3 +47,5 @@ both from the root primetables-typescript directory.
 4. The table string formatter assumes symmetry in the row/col headers (for determining the cell sizes), this should be addressed to make the code more generally applicable.
 
 5. Code is a bit light on error checking, especially array bounds/null checking. I'm used to having contracts in C# and not sure what's available in Javascript (although a quick search has just thrown up some interesting things).
+
+6. Nicer command-line runner.
