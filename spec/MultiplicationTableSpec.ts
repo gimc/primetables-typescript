@@ -11,5 +11,4 @@ describe("MultiplicationTable tests", function () {
 
         expect(table.calculate([2, 3, 5], [2, 3, 5])).toEqual(expected);
     });
-
 });
