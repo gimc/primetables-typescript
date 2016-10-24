@@ -14,6 +14,8 @@
 ### Run tests
 
     npm test
+
+(The tests take about 15 seconds on my machine, one checks generation of large primes) 
     
 ### Run application
 I'm not familiar with how to run node applications as a command in their own right. This app can be run using npm:
