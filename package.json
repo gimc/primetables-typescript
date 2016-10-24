@@ -1,0 +1,23 @@
+{
+  "name": "primetables-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "pretest": "tsc",
+    "test": "jasmine JASMINE_CONFIG_PATH=spec/support/jasmine.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gimc/primetables-typescript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gimc/primetables-typescript/issues"
+  },
+  "homepage": "https://github.com/gimc/primetables-typescript#readme",
+  "devDependencies": {
+    "jasmine": "^2.5.2"
+  }
+}
