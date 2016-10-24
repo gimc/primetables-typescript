@@ -13,7 +13,7 @@ export default class PrimeSieve {
         let candidate = 2;
         let maxCandidate = Math.floor(Math.sqrt(sieveSize));
         for (; candidate <= maxCandidate; candidate++) {
-            // If the sieve is false, this is a composite number
+            // If the sieve value is false, this is a composite number
             if (!sieve[candidate-1]) continue;
 
             // This is prime, store it and calculate its composites for the rest of the sieve
