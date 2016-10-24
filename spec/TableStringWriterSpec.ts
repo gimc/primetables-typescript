@@ -11,6 +11,7 @@ describe("Tests for formatting table data as a string.", function () {
         let output = writer.write(rowHeadings, colHeadings, data);
 
         let expected = `
+===============
  x|  2|  3|  5|
 ===============
  2|  4|  6| 10|
