@@ -11,4 +11,12 @@ describe("MultiplicationTable tests", function () {
 
         expect(table.calculate([2, 3, 5], [2, 3, 5])).toEqual(expected);
     });
+
+    it("Checks that the symmetric table is correctly calculated", function () {
+
+        let table = new MultiplicationTable();
+        let expected: number[][] = [[4, 6, 10],[6, 9, 15],[10, 15, 25]];
+        expect(table.calculateSymmetric([2, 3, 5])).toEqual(expected);
+    });
+
 });

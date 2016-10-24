@@ -17,6 +17,29 @@ export default class MultiplicationTable {
         return cells;
     }
 
+    /**
+     * Optimised implementation for symmetric tables, multiplication is only performed once for a [row,col]/[col,row] pair
+     */
+    calculateSymmetric(data: number[]) : number[][] {
+
+        let cells = this.initialiseTable(data.length, data.length);
+
+        let maxLength = Math.floor(data.length/2) + 1;
+        for (let row = 0; row < data.length; row++) {
+            // Diagonal is the square of the data values
+            cells[row][row] = data[row] * data[row];
+
+            // Just have to compute the values once for the upper triangle...
+            for (let col = row + 1; col < data.length; col++) {
+                cells[row][col] = data[row] * data[col];
+                // ... and copy the computed value into the lower triangle
+                cells[col][row] = cells[row][col];
+            }
+        }
+
+        return cells;
+    }
+
     private initialiseTable(numRows: number, numCols: number) : number[][] {
         
         let cells: number[][] = [];
